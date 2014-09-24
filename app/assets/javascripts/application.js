@@ -18,17 +18,6 @@
 //= require underscore
 //= require gmaps/google
 //= require pickadate
-$(function(){
-  $('#start_gps').click(function(){
-    navigator.geolocation.watchPosition(
-      function(position){
-        $('#latitude').html(position.coords.latitude); //緯度
-        $('#longitude').html(position.coords.longitude); //経度
-
-        }
-    );
-  });
-//  $(document).ready($(function() {
- //       $('.date').pickadate()
-//  }));
-});
+$(document).ready($(function() {
+     $('.date').pickadate()
+}));

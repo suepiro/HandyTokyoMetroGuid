@@ -25,9 +25,9 @@ SampleApp::Application.routes.draw do
   match '/signout', to: 'sessions#destroy',     via: 'delete'
 
   match '/postup',  to: 'posts#new',            via: 'get'
-	match '/index', to: 'index#home',           via: 'get'
-  match '/boarding',to: 'boarding#home',         via: 'get'
-  match '/index',   to: 'index#stationElectronicBillboards',    via: 'post'
+  match '/boarding',to: 'boarding#home',        via: 'get'
+	match '/station', to: 'index#home',           via: 'get'
+  match '/station', to: 'index#stationElectronicBillboards',    via: 'post'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

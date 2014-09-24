@@ -1,3 +1,42 @@
+    <script>
+      // 現在地を取得する処理です。
+      // 成功時にはコールバックsuccess、エラー時にはコールバックerrorが実行されます 。
+      navigator.geolocation.getCurrentPosition(success, error);
+
+      // 位置情報を取得できた場合のコールバックです。テキストボックスに緯度経度を格納します。
+      function success(position) {
+        var lat = position.coords.latitude;
+        var lon = position.coords.longitude;
+
+        lon = 139.766926;
+        lat = 35.681265;
+
+        $.ajax({
+          url: "/station",
+          type: "POST",
+          data: {lat:lat,lon:lon}
+        });
+        document.getElementById("position_msg").innerHTML = "デバイスの位置情報を取得しました";
+      }
+      // 位置情報取得失敗時のコールバックです。エラーメッセージを表示します。
+      function error(error) {
+        var error_msg = "";
+        switch(error.code)
+        {
+          case error.PERMISSION_DENIED:
+            error_msg = "位置情報の利用を有効にしてください";
+            break;
+          case error.POSITION_UNAVAILABLE:
+            error_msg = "デバイスの位置が判定できませんでした";
+            break;
+          case error.TIMEOUT:
+            error_msg = "位置情報の取得にタイムアウトしました";
+            break;
+        }
+        document.getElementById("position_msg").innerHTML = error_msg;
+      }
+    </script>
+
 <div id="position_msg" style="margin-top:10px;"></div>
 
 <div id = "stationInformation">
@@ -6,7 +45,7 @@
 	</div>
 
 	<div id = "trainlocationMap">
-	
-
+  <%= render 'shared/map' %>
 	</div>
+
 </div>
