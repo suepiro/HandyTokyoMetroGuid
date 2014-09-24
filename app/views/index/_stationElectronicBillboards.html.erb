@@ -1,0 +1,15 @@
+<ul class = "platform" style="list-style:none">
+	<div class = "bound">1　新宿方面</div>
+	<li class = "trainArrivedTime">16:29　各駅停車　新宿行き<span class = "board"><%= link_to "乗車する", boarding_path %></span></li>
+	<li class = "trainArrivedTime">16:33　各駅停車　新宿行き<span class = "board"><%= link_to "乗車する", boarding_path %></span></li>
+</ul>
+<ul class = "platform" style="list-style:none">
+	<div class = "bound">2　渋谷方面</div>
+	<li class = "trainArrivedTimeLate"><span class = "Late">遅延</span>16:29　各駅停車　渋谷行き<span class = "board"><%= link_to "乗車する", boarding_path %></span></li>
+	<li class = "trainArrivedTime">16:33　各駅停車　渋谷行き<span class = "board"><%= link_to "乗車する", boarding_path %></span></li>
+</ul>
+
+<% stationCount = 0 %>
+<% near_stations.each{|key, value|%>
+	<div class = "stationName"><%= key[0]%>,<%=getTrainLineJP(key[1])%></div>
+<% } %>

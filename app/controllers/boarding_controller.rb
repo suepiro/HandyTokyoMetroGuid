@@ -1,0 +1,2 @@
+class BoardingController < ApplicationController
+end

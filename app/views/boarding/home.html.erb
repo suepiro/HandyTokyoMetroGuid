@@ -1,0 +1,30 @@
+<div id = "InformationInTrain">
+	<div class = "TrainElectronicBillboards">
+		<ul style="list-style:none">
+			<li class = "NowStationNameJP"><ruby><rb>国会議事堂前</rb><rt>KOKKAI-GIJIDOHMAE</rt></ruby></li>
+			<li class = "TrainLineKind"><div class = "circle"></div></li>
+			<li class = "BeforeAfterStationNameJP">
+				<div class = "BeforeStationNameJP"><ruby><rb>赤坂</rb><rt>AKASAKA</rt></ruby></div>
+				<div class = "AfterStationNameJP"><ruby><rb>霞ヶ関</rb><rt>KASUMIGASEKI</rt></div>
+			</li>
+		</ul>
+	</div>
+	<div class = "InformationBillboards">
+		<div class = "detail">
+			<div class="row">
+				<div class = "span6">
+					<%= form_for("home") do |f| %>
+						<%= select :page, :name, [["霞ヶ関"], ["渋谷"],["銀座"]], :prompt => "降車予定駅を選択してください"%>	
+						<%= f.submit "決定",class: "btn btn-large btn-block"%>
+					<%end%>
+				</div>
+			</div>
+			<div class = "trainInformation">
+				<div class = "trainKind">各停　中目黒行き</div>
+				<div class = "trainLate">遅延　１０分</div>
+				<div class = "arrivedTimeToDestination">到着時刻予定　17:49</div>
+				<div class = "restTimeToDestination">目的地まで後１０分</div>
+			</div>
+		</div>
+	</div>
+</div>

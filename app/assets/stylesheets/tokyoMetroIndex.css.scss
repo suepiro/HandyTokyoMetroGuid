@@ -1,0 +1,205 @@
+/** ここから駅内にある情報に関して**/
+#stationInformation {
+	display: box;
+	display: -webkit-box;
+	display: -moz-box;
+	margin-top:20px;
+}
+/** ここまで駅内にある情報に関して **/
+
+/** ここから電車の現在位置のマップに関して **/
+#trainlocationMap {
+	width:600px;
+	height:400px;	
+	border: 1px double #000000;
+	margin-left:28px;
+}
+/** ここまで電車の現在位置のマップに関して **/
+
+
+/** ここから駅内の電光掲示板に関して **/
+#stationElectronicBillboards {
+	margin-left:40px;
+	border: 1px double #000000;
+	width:600px;
+	padding:10px;
+}
+
+.bound {
+	font-size:30pt;
+	padding-top:30px;
+}
+
+.trainArrivedTime {
+	font-size:20pt;
+	margin-top:25px;
+	margin-left:60px;
+}
+
+.trainArrivedTimeLate {
+	font-size:20pt;
+	margin-top:25px;
+	margin-left:33px;
+	color: #ff0000;
+}
+
+.Late {
+	font-size:10pt;
+}
+
+.board{
+	font-size:15pt;
+	margin-left:20px;
+}
+/** ここまで駅内の電光掲示板に関して **/
+
+
+/** ここから路線図に関して **/
+#trainMap {
+  -ms-writing-mode:tb-rl;
+  -webkit-writing-mode:vertical-lr;
+  direction:ltr;
+  font-size:30pt;
+  margin-left:40px;
+  margin-top:20px;
+  padding:25px;
+  width:1200px;
+  border: 1px double #000000;
+}
+
+li.station {
+	margin-left: 20px;
+}
+.stationIcon {
+    -webkit-border-radius: 50%;/* 50%でもOK */
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    background-color: #87CEFA;/* 円の色 */
+}
+
+.right{
+  position: relative;
+  width: 0;
+  height: 0;
+  border: 16px solid transparent;
+  border-left-color: #999;
+  margin-left:50px;
+  margin-top:70px;
+}
+
+.right:after{
+  position: absolute;
+  content: '';
+  top: -8px;
+  left: -32px;
+  width: 16px;
+  height: 16px;
+  background: #999;
+}
+/** ここまで路線図に関して **/
+
+/** ここから乗車中の情報に関して **/
+#InformationInTrain {
+  display: box;
+  display: -webkit-box;
+  display: -moz-box;
+  margin-top:20px;
+}
+
+.TrainElectronicBillboards {
+  margin-left:40px;
+  ul{
+    margin:0px;
+    padding:0px;
+  }
+  
+  border: 1px double #000000;
+
+  .NowStationNameJP {
+    font-size:35pt;
+    margin-top:50pt;
+    text-align: center;
+  }
+  .NowStationNameEN {
+    font-size:20pt;
+    margin-top:20pt;
+    text-align: center;
+  }
+  .TrainLineKind{
+    width: 600px;
+    height: 50px;
+    background: #1E90FF;
+    margin-top:40px;
+    .circle {
+      margin-left:285px;
+      width: 50px;
+      height: 50px;
+      background: white;
+      -moz-border-radius: 50px;
+      -webkit-border-radius: 50px;
+      border-radius: 50px;
+    }
+  }
+
+  .BeforeAfterStationNameJP {  
+    margin-top:35pt;   
+    
+    .BeforeStationNameJP {
+      font-size:30pt;
+      float:left;
+    }
+    .AfterStationNameJP {
+      font-size:30pt;
+      float:right;
+    }
+  }
+
+  .BeforeAfterStationNameEN {
+    .BeforeStationNameEN {
+      font-size:15pt;
+      margin-top:40pt;
+      float:left;
+    }
+    .AfterStationNameEN {
+      font-size:15pt;
+      margin-top:40pt;
+      float:right;
+    }
+  }
+}
+
+.InformationBillboards {
+  border: 1px double #000000;
+  width:600px;
+  height:400px; 
+  margin-left:45px;
+
+  .detail {
+    margin-left:70px;
+  }
+
+  #page_name{
+    font-size:20pt;
+    height:60px;
+    margin-top:25px;
+  }
+
+  .trainInformation {
+    font-size:25pt;
+    .trainKind {
+      margin-top:20px;
+    }
+    .trainLate {
+      margin-top:25px;
+    }
+    .arrivedTimeToDestination {
+      margin-top:25px;
+    }
+    .restTimeToDestination {
+      margin-top:25px;
+    }
+  }
+
+
+}
+/** ここまで乗車中の情報に関して **/
