@@ -40,16 +40,19 @@ class IndexController < ApplicationController
 
           #プラットフォーム情報生成
           tmpPlatform = Platform.new()
+          tmpPlatform.stationMap = getTrainLineAndStationData("渋谷駅","銀座線") #路線マップを格納する
+          tmpStation.platforms = tmpPlatform
 
       		stationName = station["dc:title"]
       		stationLine = station["odpt:railway"]
       		@near_stations[[stationName,stationLine]] = station
       	  @near_stations2 << tmpStation
         end
-      	puts @near_stations.size
+
         @near_stations2.each do |s|
           puts s.name
         end
+
       	respond_to do |format|
       	   	format.js
       	end
@@ -59,7 +62,7 @@ class IndexController < ApplicationController
   #CSVファイルから、路線マップとプラットフォーム情報を取得する関数
   #駅名
   #路線
-  #返却値：[] 指定した駅が所属する路線マップ
+  #返却値：[] 指定した駅が所属する路線マップ(その路線の駅名を格納する)
   def getTrainLineAndStationData(stationName,lineName)
     lineMap = []
     csvDataFile = "python script/stationData.csv" #形式[路線、駅名、プラットフォーム情報、駅の詳細情報サイトへのリンク、急行が停止するかの有無]
@@ -91,6 +94,16 @@ class IndexController < ApplicationController
   		@name
   	end
 
+    #プラットフォーム情報を格納する関数
+    def platforms=(_platform)
+      @platforms = _platform
+    end
+
+    #プラットフォーム情報を取得する関数
+    def platforms
+      @platforms
+    end
+
   end
 
   # プラットフォームクラス
@@ -111,7 +124,7 @@ class IndexController < ApplicationController
   	end
 
   	def trains=(_train)
-  		@trains << _train
+  		@trains = _train
   	end
 
   	def bound=(_bound)
@@ -119,7 +132,7 @@ class IndexController < ApplicationController
   	end
 
   	def stationMap=(_station)
-  		@stationMap << _station
+  		@stationMap = _station
   	end
 
   	#以下、変数参照用関数

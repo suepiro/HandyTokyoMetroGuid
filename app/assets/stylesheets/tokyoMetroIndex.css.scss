@@ -65,6 +65,18 @@
   padding:25px;
   width:1200px;
   border: 1px double #000000;
+
+	.circle {
+		 display: inline-block;
+		 _display: inline;                                       
+     		 margin-bottom:10px;
+		 width: 50px;                                  
+      		 height: 50px;
+      		 background: blue;                            
+      		 -moz-border-radius: 50px;                     
+      		 -webkit-border-radius: 50px;
+      		 border-radius: 50px;
+    	}
 }
 
 li.station {

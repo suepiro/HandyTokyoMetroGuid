@@ -1,3 +1,4 @@
+<!--
 <ul class = "platform" style="list-style:none">
 	<div class = "bound">1　新宿方面</div>
 	<li class = "trainArrivedTime">16:29　各駅停車　新宿行き<span class = "board"><%= link_to "乗車する", boarding_path %></span></li>
@@ -8,8 +9,16 @@
 	<li class = "trainArrivedTimeLate"><span class = "Late">遅延</span>16:29　各駅停車　渋谷行き<span class = "board"><%= link_to "乗車する", boarding_path %></span></li>
 	<li class = "trainArrivedTime">16:33　各駅停車　渋谷行き<span class = "board"><%= link_to "乗車する", boarding_path %></span></li>
 </ul>
+-->
+<ul class = "platform" style="list-style:none">
+	<% near_stations.each do |station|%>
+		<div class = "stationName"><%= station.name%></div>
+	        <div class = "bound">bound</div>
+		<li class = "trainArrivedTime"><span class = "board"><%= link_to "乗車>する", boarding_path %></span></li>
+		<div class = "stationName">test</div>
+	<% end %>
+</ul>
+
 
 <% stationCount = 0 %>
-<% near_stations.each{|key, value|%>
-	<div class = "stationName"><%= key[0]%>,<%=getTrainLineJP(key[1])%></div>
-<% } %>
+

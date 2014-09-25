@@ -1,1 +1,3 @@
-$("#stationElectronicBillboards").html("<%= escape_javascript(render partial: 'index/stationElectronicBillboards', locals: { near_stations: @near_stations } ) %>"); 
+$("#stationElectronicBillboards").html("<%= escape_javascript(render partial: 'index/stationElectronicBillboards', locals: { near_stations: @near_stations2 } ) %>"); 
+
+$("#trainMap").html("<%= escape_javascript(render partial: 'index/trainMap', locals: { stations: @near_stations2 } ) %>")

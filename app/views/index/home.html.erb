@@ -41,11 +41,15 @@
 
 <div id = "stationInformation">
 	<div id = "stationElectronicBillboards">
-		<%= render partial: 'index/stationElectronicBillboards',locals: { near_stations: {} }%>
+		<%= render partial: 'index/stationElectronicBillboards',locals: { near_stations: [] }%>
 	</div>
 
 	<div id = "trainlocationMap">
   <%= render 'shared/map' %>
 	</div>
-
 </div>
+
+<div id = "trainMap">
+  <%= render partial: 'index/trainMap',locals: { stations: [] }%>
+</div>
+
